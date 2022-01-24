@@ -1,0 +1,84 @@
+@import '../../global.scss';
+.portfolio{
+    background-color:  white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        font-size: 50px;
+
+         @include mobile{            
+            font-size: 20px;
+            padding: 10px 0;
+            overflow: hidden;
+         }
+    }
+    ul{ 
+        margin: 10px;
+        padding: 0px;
+        list-style: none;
+        display: flex;
+
+        @include mobile{
+            flex-wrap:wrap ;
+            height: 100px;
+        }
+        
+    }
+
+    .container{
+            width: 70%;
+            display: flex;            
+            align-items: center;
+            flex-wrap: wrap;
+             
+            .item{
+                width: 220px;
+                height: 150px;
+                border-radius: 20px;
+                border: 1px solid rgb(235, 233, 233);
+                margin: 10px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color:white;
+                position: relative;
+                transition:  all 0.8s ease;
+                 @include mobile{
+                    width: 170px;
+                    height: 170px;
+                 }
+                img{
+                    width: 150px;                    
+                    object-fit: cover;
+                    z-index: 1;
+                    
+                    
+                }
+                &:hover{
+                    background-color: $maincolor;   
+                    cursor: pointer;
+                    img{
+                        // width: 150px;               
+                        // height: fit-content;     
+                        object-fit: cover;
+                        opacity: 0.2;
+                        z-index: 0;
+                        
+                    }
+                }
+                h3{
+                    position: absolute;
+                    font-size: 20px;
+                    @include mobile{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                 }
+                }
+
+            }
+    }
+}
